@@ -1,6 +1,6 @@
 # INFO 474
 
-> Interactive Information Visualization 
+> Interactive Information Visualization  
 > Spring quarter, 2019  
 > Taught by instructor Yea Seul Kim   
 
