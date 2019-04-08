@@ -40,8 +40,7 @@ itself as seperation in the vertical (bacteria) axis. Each facet is labeled with
 its category for optimal clarity.
 
 This visualization was created using _R_ and the _ggplot2_ package. The script
-used to create this visualization can be found [here][script-link].
+used to create this visualization can be found [here](https://github.com/spencerpease-classes/info474/blob/master/assignments/a1/script.R).
 
 
 [plot]: plot.png
-[script]: https://github.com/spencerpease-classes/info474/blob/master/assignments/a1/script.R
