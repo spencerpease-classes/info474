@@ -6,7 +6,7 @@
 
 ## Visualization
 
-![Plot comparing antibiotic effectiveness against different bacteria.](plot.png)
+![Plot comparing antibiotic effectiveness against different bacteria.][plot]
 
 
 ## Design Rationale
@@ -17,12 +17,11 @@ showing the relative differences between two interacting variables. Its purpose
 is not to present the exact data (looking at a table of number would be more
 effective for that), but to make it easy to see the realationships between
 different bacteria / antibiotic pairs. Arranging the data in a grid with colored
-cells makes it easy to see these differences.
-
-In this case, antibiotics are shown on the $x$-axis, and bacteria are shown on
-the $y$-axis, where each rectangle represents one combination of the two. Since
-each axis represents nominal data with text labels, the axes are sorted
-alphabetically to aid in searching for a specific bacteria / antibiotic pair. 
+cells makes it easy to see these differences. In this case, antibiotics are
+shown on the $x$-axis, and bacteria are shown on the $y$-axis, where each
+rectangle represents one combination of the two. Since each axis represents
+nominal data with text labels, the axes are sorted alphabetically to aid in
+searching for a specific bacteria / antibiotic pair. 
 
 The primary relationship this visualization focuses on is the MIC values for
 every bacteria / antibiotic pair, which is encoded in the color values of the
@@ -39,3 +38,10 @@ bacteria can simply be seperated in categories based on their response. This is
 encoded by faceting the heatmap by "Gam Staining" response, which presents
 itself as seperation in the vertical (bacteria) axis. Each facet is labeled with
 its category for optimal clarity.
+
+This visualization was created using _R_ and the _ggplot2_ package. The script
+used to create this visualization can be found [here][script-link].
+
+
+[plot]: plot.png
+[script]: https://github.com/spencerpease-classes/info474/blob/master/assignments/a1/script.R
