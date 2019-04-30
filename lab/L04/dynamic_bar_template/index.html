@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="https://d3js.org/d3.v4.min.js"></script>	
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+
+	<div> Choose year:  <select id="year"></select> </div>
+	
+
+	</body>
+
+	<script type="text/javascript">
+		
+		d3.csv('data2018.csv', function(error, data) {
+			data.forEach(function(d) {
+				var dates = d.date.split("-");
+				// parse data 
+
+			})
+
+		// var margin = {top: 25, bottom: 10, left: 25, right: 25},
+		// width = 700 - margin.left - margin.right,
+		// height = 400 - margin.top - margin.bottom;
+
+		// var svg = d3.select("body").append("svg")
+		//     .attr("width", width + margin.left + margin.right)
+		//     .attr("height", height + margin.top + margin.bottom)
+		//     .attr("id", "chart")
+		//   .append("g")
+		//     .attr("transform", 
+		//           "translate(" + margin.left + "," + margin.top + ")");
+
+		 	
+		})
+
+
+	</script>
+
+</html>
