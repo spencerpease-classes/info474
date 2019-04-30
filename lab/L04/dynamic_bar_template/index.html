@@ -14,7 +14,7 @@
 
 	<script type="text/javascript">
 
-		d3.csv('data2018.csv', function(error, data) {
+		d3.csv('data.csv', function(error, data) {
 			data.forEach(function(d) {
 				var dates = d.date.split("-");
 				// parse data
@@ -49,9 +49,6 @@
 		var yAxis = d3.axisLeft()
 			.scale(y)
 
-		x.domain(data.map(function(d) { return d.month; }))
-		y.domain([0, d3.max(data, function(d) { return d.value; })])
-
 		svg.append("g")
 			.attr("transform", "translate(0," + (height - margin.bottom) + ")")
 			.attr("class", "x-axis")
@@ -63,15 +60,59 @@
 			.call(yAxis)
 
 
-		var bar = svg.selectAll(".bar")
-			.data(data, function(d) { return d.month; })
-			.enter().append("rect")
-			.attr("class", "bar")
-			.attr("fill", "steelblue")
-			.attr("width", x.bandwidth())
-			.attr("x", function(d) { return x(d.month); })
-			.attr("y", function(d) { return y(d.value); })
-			.attr("height", function(d) { return y(0) - y(d.value); })
+		// Add interactive
+
+		var years = [...new Set(data.map(function(d) { return d.year; }))]
+
+		var options = d3.select("#year").selectAll("option")
+			.data(years)
+		.enter().append("option")
+			.text(function(d) {return d;})
+
+		var select = d3.select("#year")
+			.on("change", function() {
+				update(data, this.value)
+			})
+
+		update(data, d3.select("#year").property("value"))
+
+		function update(data, years) {
+
+			var data = data.filter(function(d) { return d.year == years})
+
+			x.domain(data.map(function(d) { return d.month; }))
+			y.domain([0, d3.max(data, function(d) { return d.value; })])
+
+			svg.selectAll(".x-axis")
+				.transition()
+				.duration(0)
+				.call(xAxis)
+
+			svg.selectAll(".y-axis")
+				.transition()
+				.duration(0)
+				.call(yAxis)
+
+
+			var bar = svg.selectAll(".bar")
+				.data(data, function(d) { return d.month; })
+
+			bar.exit().remove()
+
+			bar.enter().append("rect")
+				.attr("class", "bar")
+				.attr("fill", "steelblue")
+				.attr("width", x.bandwidth())
+				.merge(bar)
+				.transition().duration(1000)
+				.attr("x", function(d) { return x(d.month); })
+				.attr("y", function(d) { return y(d.value); })
+				.attr("height", function(d) { return y(0) - y(d.value); })
+
+		}
+
+
+
 
 		})
 
