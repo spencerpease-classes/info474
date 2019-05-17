@@ -8,17 +8,49 @@
 
 	<body>
 
-    <h1>Assignment 3: Interactive Visualization</h1>
+		<h1>Assignment 3: Interactive Visualization</h1>
+
+		<h2>Introduction</h2>
 
     <h2>Data Domain and Visualization Techniques</h2>
 
     <h2>Application Description</h2>
 
-		<h3>Air Quality vs Time of Day</h3>
-		<div id="vis"></div>
 
-		<h3>Select Date:</h3>
-		<div id="slider"></div>
+
+		<span id="interactive">
+
+				<h3>Air Quality vs Time of Day</h3>
+				<div id="vis"></div>
+
+				<h3>Select Date:</h3>
+				<div id="slider"></div>
+
+		</span>
+
+		<div class='my-legend'>
+				<div class='legend-title'>Air Quality Legend</div>
+				<div class='legend-scale'>
+					<ul class='legend-labels'>
+						<li><span style='background:#00E400;'></span>Good</li>
+						<li><span style='background:#FFFF00;'></span>Moderate</li>
+						<li><span style='background:#FF7E00;'></span>Unhealthy for Sensitive Groups</li>
+						<li><span style='background:#FF0000;'></span>Unhealthy</li>
+						<li><span style='background:#8F3F97;'></span>Very Unhealthy</li>
+						<li><span style='background:#7E0023;'></span>Hazardous</li>
+					</ul>
+				</div>
+				<div class='legend-source'>Source: <a href="https://airnow.gov/index.cfm?action=aqibasics.aqi">AirNow</a></div>
+			</div>
+
+
+		<footer>
+				<h2>References</h2>
+
+				<p>Code for the slider was adapted primarily from: <a href="bl.ocks.org/officeofjane/9b9e606e9876e34385cc4aeab188ed73">Date slider - filtering data</a>.</p>
+				<p>Air quality data was downloaded and manipulated using the <a href="mazamascience.github.io/PWFSLSmoke/">PWFSLSmoke</a> R package.</p>
+
+		</footer>
 
 	</body>
 
