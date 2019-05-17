@@ -12,7 +12,7 @@ AQI_breaks = [12.0,  35.5,  55.5, 150.5, 250.5];
 AQI_colors = ["#00E400", "#FFFF00", "#FF7E00", "#FF0000", "#8F3F97", "#7E0023"];
 color_scale = AQI_colors;
 
-var data_path = "pm25_data.csv"
+var data_path = "data/pm25_data.csv"
 
 var parseDate = d3.timeParse("%Y-%m-%d");
 
