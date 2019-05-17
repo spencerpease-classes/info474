@@ -76,6 +76,26 @@ colorAQI = function(pm25) {
 
 }
 
+
+// Create tooltip ------------------------------------------------------------
+
+var div = d3.select('#vis').append('div')
+  .attr('class', 'tooltip')
+  .style('display', 'none');
+
+function mouseover() { div.style('display', 'inline'); }
+
+function mousemove(){
+  var d = d3.select(this).data()[0]
+  div
+    .html("pm 2.5" + '<hr/>' + d.pm25)
+    .style('left', (d3.event.pageX - 34) + 'px')
+    .style('top', (d3.event.pageY - 12) + 'px');
+}
+
+function mouseout() { div.style('display', 'none'); }
+
+
 // Create slider -------------------------------------------------------------
 
 var svgSlider = d3.select("#slider")
@@ -214,6 +234,9 @@ function drawPlot(data) {
     .attr("class", "bar")
     .attr("width", x.bandwidth())
     .merge(bar)
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseout', mouseout)
     .transition().duration(1000)
     .attr("x", function(d) { return x(d.hour); })
     .attr("y", function(d) { return y(d.pm25); })
