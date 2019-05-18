@@ -10,7 +10,8 @@ var startDate = new Date("2018-08-11"),
 
 AQI_breaks = [12.0,  35.5,  55.5, 150.5, 250.5];
 AQI_colors = ["#00E400", "#FFFF00", "#FF7E00", "#FF0000", "#8F3F97", "#7E0023"];
-color_scale = AQI_colors;
+YlOrRd_colors = ['#ffffb2','#fed976','#feb24c','#fd8d3c','#f03b20','#bd0026']
+color_scale = YlOrRd_colors;
 
 var data_path = "data/pm25_data.csv"
 
