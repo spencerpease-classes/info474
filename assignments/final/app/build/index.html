@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <title>Dynamic Wikipedia</title>
+    <meta property="og:title" content="Dynamic Wikipedia" />
+    <meta charset="utf-8" />
+    <meta property="og:type" content="article" />
+
+    <meta property="og:description" content="Exploring real-time change" />
+    <meta property="description" content="Exploring real-time change" />
+
+    <link rel="stylesheet" href="static/idyll_styles.css" />
+  </head>
+  <body>
+    <div id="idyll-mount"><div data-reactroot=""><div class="idyll-root"><div class=" idyll-text-container"></div><div class="article-header" style="background:#00485C;color:#ffffff"><h1 class="hed">Dynamic Wikipedia</h1><h2 class="dek">Exploring real-time change</h2><div class="byline">By: <a href="http://spencerpease.com">Spencer Pease</a></div></div><div class=" idyll-text-container"><div class="aside-container"><div class="aside"><h2>Fraction of Total Change Magnitude by Edit Type</h2><div style="width:100%"></div><ul><li><strong>Edits:</strong> <span class="idyll-display">0.00</span></li><li><strong>Addition Size Proportion:</strong> <span class="idyll-display">NaN</span></li><li><strong>Deletion Size Proportion:</strong> <span class="idyll-display">NaN</span></li></ul></div></div><h1>Introduction</h1><p>How often do you use Wikipedia? It’s probably more often than you think. Even
+if you don’t visit the actual site often, Wikipedia’s articles are often used
+to present quick information about queries in search engines, or as the basis
+for what your virtual assistant says to you when you ask it how old that one
+famous person is.</p><p>Considering how prevalent Wikipedia is in our digital lives, its worth looking
+into where its information comes from. Founded in 2001 as a free online
+encyclopedia, Wikipedia revolves around the core tenant that no one group should
+control what information is available to the public. To that end, Wikipedia,
+unlike its counterpart Encyclopædia Britannica, allows anyone to make edits or
+add new entries to its database. This has no doubt contributed to Wikipedia’s
+success. In 2018, it was the fifth most visited website according to Alexa
+Internet. Currently, Wikipedia has approximately 5.8 million entries in English
+alone, and over 48 million entries across all languages.</p><p>This openness and popularity leads to some issues, however. How do we know that
+the person (or computer) editing Wikipedia article can be trusted? What happens
+when a controversial or highly political event happens and someone decides to
+create an article for it?</p><h1>Additions and Deletions</h1><p>How much does the internet’s collective knowledge expand and contract day to
+day, or even minute to minute? Looking at a single article on Wikipedia, it’s
+not easy to tell when its been changed. Even if you do look at edit history,
+all you see it is a timeline of edits to that article, and looking at timestamps
+isn’t the best way to contextually understand change. Luckily, Wikipedia
+provides an API that returns the most recent edits across all of Wikipedia,
+including information such as who made the edit, the article’s old length, and
+the articles length after the edit. Using this, we can examine how Wikipedia
+grows and shrinks over time.</p><p>Starting with a set of recent changes, we can replay them on the bar graph to
+the right. For each edit, we look to see if there was a net increase or
+decrease in the the article’s length (measured in bytes). Then we add that to
+the running total addition or deletion size, then divide that by the sum of
+both running totals. This gives us the what fraction of total change size that
+has been an addition or deletion to Wikipedia.</p><p>For this time range, we see that there was more added to Wikipedia than removed.
+Specifically, <strong><span class="idyll-display">0.00</span></strong> bytes were added, while <strong><span class="idyll-display">0.00</span></strong>
+bytes were removed. This means there was a net change of <strong><span class="idyll-display">0.00</span></strong> bytes.</p><h1>A Wide Range of Edits</h1><p>Not all edits to Wikipedia are equal. Some are large, such as adding or removing
+sections about important events. Others are small, like updating win/loss stats
+for sports teams. A lot of these small changes are required to keep information
+up to date, but maintaining so many bits of information becomes tedious for one
+person to manage. To make the small and simple changes easier to maintain,
+Wikipedia allows “bots”, or program scripts, to make changes to articles
+without being tied to a human user.</p><p>We can explore how many of Wikipedia’s changes are carried out by bots below.</p><h2>Histogram of Article Change Size</h2><p><strong>Show changes from:</strong> <select options="all,people,bots"><option value="all">all</option><option value="people">people</option><option value="bots">bots</option></select></p><em>(Histogram goes here)</em></div></div></div></div>
+    <script src="static/idyll_index.js"></script>
+  </body>
+</html>
