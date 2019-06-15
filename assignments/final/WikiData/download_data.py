@@ -19,6 +19,7 @@ PARAMS = {
     "action": "query",
     "format": "json",
     "list": "recentchanges",
+    "rcdir": "newer",
     "rctype": "edit",
     "rcshow": "!bot",
     "rcprop": "timestamp|ids|title|sizes|flags|user",
@@ -28,14 +29,7 @@ PARAMS = {
 R = S.get(url = URL, params = PARAMS)
 DATA = R.json()
 
-print(DATA)
-
 edit_data = DATA["query"]["recentchanges"]
 
-print(type(edit_data))
-
-
 with open("data.json", "w", encoding = "utf-8") as f:
-  # for item in edit_data:
-  #   f.write("%s\n" % item)
   json.dump(edit_data, f, ensure_ascii = False)

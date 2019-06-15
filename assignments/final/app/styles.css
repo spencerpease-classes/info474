@@ -9,3 +9,11 @@
     max-height: 200px;
   }
 }
+
+.x-axis .y-axis {
+  font-size: 20px;
+}
+
+.idyll-root {
+  color: #333333;
+}

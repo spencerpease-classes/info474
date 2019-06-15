@@ -40,7 +40,7 @@ var editColor = function(editType) {
 }
 
 
-class D3BarChart extends D3Component {
+class D3RatioBars extends D3Component {
 
   initialize(node, props) {
 
@@ -114,4 +114,4 @@ class D3BarChart extends D3Component {
   }
 }
 
-module.exports = D3BarChart;
+module.exports = D3RatioBars;
